@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "661390553081",
+    "project_id": "study-success-diary",
+    "storage_bucket": "study-success-diary.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:661390553081:android:f2b2865d0d06069dca1728",
+        "android_client_info": {
+          "package_name": "com.example.study_achievement_diary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "661390553081-e8fd58hc5g6af835v2m1jda8b8v7numd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABg5RTjeJvdYvav85JSUhzPDwI2iWQzWY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "661390553081-e8fd58hc5g6af835v2m1jda8b8v7numd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "661390553081-qp3llfeko6paqlh5el4tfb6kf6t6cf72.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.studyAchievementDiary"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
