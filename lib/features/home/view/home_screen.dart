@@ -345,12 +345,39 @@ class _HomeScreenState extends State<HomeScreen> {
     // Кнопка показується завжди
     const bool showFab = true; 
 
+    // Адаптація для мобільного пристрою
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        // Якщо ширина менше 800px, вважаємо це мобільним
+        final bool isMobile = constraints.maxWidth < 800;
+
+
     return Scaffold(
+
+      // Нижнє меню для телефона
+      bottomNavigationBar: (isMobile && !viewModel.isDetailView) 
+            ? BottomNavigationBar(
+                currentIndex: viewModel.currentIndex,
+                onTap: (index) => viewModel.onTabTapped(index),
+                type: BottomNavigationBarType.fixed,
+                selectedItemColor: const Color(0xFF156254),
+                unselectedItemColor: Colors.grey,
+                items: const [
+                  BottomNavigationBarItem(icon: Icon(Icons.pie_chart), label: 'Успішність'),
+                  BottomNavigationBarItem(icon: Icon(Icons.book), label: 'Курси'),
+                  BottomNavigationBarItem(icon: Icon(Icons.note), label: 'Нотатки'),
+                  BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Профіль'),
+                ],
+              ) 
+            : null,
+
       body: Stack(
         children: [
           Row(
             children: [
-              const CustomSidebar(), 
+              if (!isMobile) 
+                  const CustomSidebar(),
+
               Expanded(
                 child: AnimatedSwitcher(
                   duration: const Duration(milliseconds: 300),
@@ -425,8 +452,11 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
     );
+    }
+    ); 
   }
 }
+
 
 // Віджет для опції меню FAB
 class _FabOption extends StatelessWidget {
